@@ -21,12 +21,12 @@ soap('Rainbow');
 
 ## License
 
-MIT © [Alexandre Santos](https://github.com/AlexSantos)
+MIT © [Alexandre Santos](https://github.com/alexsantos)
 
 
 [npm-url]: https://npmjs.org/package/soap-cli-simple
 [npm-image]: https://badge.fury.io/js/soap-cli-simple.svg
-[travis-url]: https://travis-ci.org/AlexSantos/soap-cli-simple
-[travis-image]: https://travis-ci.org/AlexSantos/soap-cli-simple.svg?branch=master
-[daviddm-url]: https://david-dm.org/AlexSantos/soap-cli-simple.svg?theme=shields.io
-[daviddm-image]: https://david-dm.org/AlexSantos/soap-cli-simple
+[travis-url]: https://travis-ci.org/alexsantos/soap-cli-simple
+[travis-image]: https://travis-ci.org/alexsantos/soap-cli-simple.svg?branch=master
+[daviddm-url]: https://david-dm.org/alexsantos/soap-cli-simple.svg?theme=shields.io
+[daviddm-image]: https://david-dm.org/alexsantos/soap-cli-simple

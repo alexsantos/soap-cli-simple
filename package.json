@@ -2,13 +2,13 @@
     "name": "soap-cli-simple",
     "version": "0.1.1",
     "description": "A simple soap client.",
-    "homepage": "https://github.com/AlexSantos/soap-cli-simple",
+    "homepage": "https://github.com/alexsantos/soap-cli-simple",
     "author": {
         "name": "Alexandre Santos",
         "email": "santosam72@gmail.com",
-        "url": "https://github.com/AlexSantos"
+        "url": "https://github.com/alexsantos"
     },
-    "repository": "AlexSantos/soap-cli-simple",
+    "repository": "alexsantos/soap-cli-simple",
     "license": "MIT",
     "files": [
         "index.js"
