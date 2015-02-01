@@ -1,6 +1,6 @@
 'use strict';
 var request = require('request'),
-    gzip = require('../gzip-simple'),
+    gzip = require('gzip-simple'),
     xml2js = require('./utils/xml2js');
 
 function namespaces(ns) {
