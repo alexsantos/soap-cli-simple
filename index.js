@@ -1,39 +1,7 @@
 'use strict';
 var request = require('request'),
     gzip = require('../gzip-simple'),
-    xml2js = (function () {
-        var xml2js = require('xml2js');
-        return {
-            buildObject: function (message) {
-                var builder = new xml2js.Builder({
-                    "headless": true
-                });
-                return builder.buildObject(message);
-            },
-            parseString: function (str) {
-                var prefixMatch = new RegExp(/(?!xmlns)^.*:/),
-                    stripPrefix = function (str) {
-                        return str.replace(prefixMatch, '');
-                    },
-                    parser = new xml2js.Parser({
-                        ignoreAttrs: true,
-                        explicitArray: false,
-                        firstCharLowerCase: true,
-                        tagNameProcessors: [stripPrefix]
-                    });
-                return new Promise(
-                    function (resolve, reject) {
-                        parser.parseString(str, function (err, result) {
-                            if (err) {
-                                reject(err);
-                            } else {
-                                resolve(result);
-                            }
-                        });
-                    });
-            }
-        };
-    })();
+    xml2js = require('./utils/xml2js');
 
 function namespaces(ns) {
     var attributes = '';
@@ -45,8 +13,6 @@ function namespaces(ns) {
 
 function envelope(operation, message, options) {
     var xml = '<?xml version="1.0" encoding="UTF-8"?>';
-
-
     xml += `<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" ${namespaces(options.namespaces)}>`;
     if (options.header) {
         xml += `<env:Header>${options.header}</env:Header>`;
@@ -70,7 +36,6 @@ function headers(schema, length) {
 module.exports = function (endpoint, operation, action, message, options) {
     console.log('Start');
     var xml = envelope(operation, message, options);
-
     return new Promise(
         function (resolve, reject) {
             console.time('Promise');
