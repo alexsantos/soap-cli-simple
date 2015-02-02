@@ -15,7 +15,6 @@ $ npm install --save soap-cli-simple
 ```js
 var soap = require('soap-cli-simple');
 
-soap('Rainbow');
 ```
 
 
