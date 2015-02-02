@@ -40,7 +40,6 @@ module.exports = function (endpoint, operation, action, message, options) {
     var xml = envelope(operation, message, options);
     return new Promise(
         function (resolve, reject) {
-            console.time('Promise');
             request.post({
                 uri: endpoint,
                 body: xml,
