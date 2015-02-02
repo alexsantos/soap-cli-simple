@@ -22,7 +22,6 @@ function envelope(operation, message, options) {
     }
     xml += '<env:Body>' + xml2js.buildObject(message) + '</env:Body>';
     xml += '</env:Envelope>';
-    console.log(xml);
     return xml;
 }
 
