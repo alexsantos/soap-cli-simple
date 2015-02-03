@@ -25,17 +25,15 @@ function namespaces(ns) {
 }
 
 function envelope(operation, message, options) {
-    var xml = '<?xml version="1.0" encoding="UTF-8"?>';
-    xml += '<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" ' +
+    var xml = '<?xml version="1.0" encoding="UTF-8"?>' +
+        '<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" ' +
         'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
         'xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" ' +
         'xmlns="' + options.namespace + '" ' +
-        namespaces(options.namespaces) + '>';
-    if (options.header) {
-        xml += '<env:Header>' + options.header + '</env:Header>';
-    }
-    xml += '<env:Body>' + xml2js.buildObject(message) + '</env:Body>';
-    xml += '</env:Envelope>';
+        namespaces(options.namespaces) + '>' +
+        (options.header ? '<env:Header>' + options.header + '</env:Header>' : '') +
+        '<env:Body>' + xml2js.buildObject(message) + '</env:Body>' +
+        '</env:Envelope>';
     logger.info('Request');
     logger.info(xml);
     return xml;
