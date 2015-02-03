@@ -3,17 +3,18 @@ var request = require('request'),
     xml2js = require('./utils/xml2js'),
     log4js = require('log4js');
 
+//TODO: read tge configuraion from a file on a relative config/ dir.
 log4js.configure({
     appenders: [{
         type: 'console'
     }, {
         type: 'file',
         filename: 'logs/soap-cli-simple.log',
-        category: 'soap'
+        category: 'soap-cli-simple'
     }]
 });
 
-var logger = log4js.getLogger('soap');
+var logger = log4js.getLogger('soap-cli-simple');
 
 function namespaces(ns) {
     var attributes = '';
