@@ -1,6 +1,19 @@
 'use strict';
 var request = require('request'),
-    xml2js = require('./utils/xml2js');
+    xml2js = require('./utils/xml2js'),
+    log4js = require('log4js');
+
+log4js.configure({
+    appenders: [{
+        type: 'console'
+    }, {
+        type: 'file',
+        filename: 'logs/soap-cli-simple.log',
+        category: 'soap'
+    }]
+});
+
+var logger = log4js.getLogger('soap');
 
 function namespaces(ns) {
     var attributes = '';
@@ -22,6 +35,8 @@ function envelope(operation, message, options) {
     }
     xml += '<env:Body>' + xml2js.buildObject(message) + '</env:Body>';
     xml += '</env:Envelope>';
+    logger.debug('Request');
+    logger.debug(xml);
     return xml;
 }
 
@@ -48,9 +63,13 @@ module.exports = function (endpoint, operation, action, message, options) {
                 secureProtocol: options.secureProtocol
             }, function (error, response, body) {
                 if (error) {
+                    logger.error('Response');
+                    logger.error(error);
                     reject(error);
                 } else {
-                    xml2js.parseString(body).then(resolve).catch(reject);
+                    logger.info('Response');
+                    logger.info(body);
+                    xml2js.parseString(body).then(response).catch(reject);
                 }
 
             });

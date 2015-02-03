@@ -3,7 +3,10 @@ module.exports = (function () {
     return {
         buildObject: function (message) {
             var builder = new xml2js.Builder({
-                "headless": true
+                "headless": true,
+                "renderOpts": {
+                    "pretty": false
+                }
             });
             return builder.buildObject(message);
         },

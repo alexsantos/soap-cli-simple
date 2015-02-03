@@ -1,38 +1,39 @@
 {
-    "name": "soap-cli-simple",
-    "version": "0.2.2",
-    "description": "A simple soap client.",
-    "homepage": "https://github.com/alexsantos/soap-cli-simple",
-    "author": {
-        "name": "Alexandre Santos",
-        "email": "santosam72@gmail.com",
-        "url": "https://github.com/alexsantos"
-    },
-    "repository": "alexsantos/soap-cli-simple",
-    "license": "MIT",
-    "files": [
-        "index.js"
-    ],
-    "keywords": [
-        "soap-cli-simple",
-        "soap",
-        "client"
-    ],
-    "dependencies": {
-        "request": "^2.51.0",
-        "xml2js": "^0.4.4"
-    },
-    "devDependencies": {
-        "grunt-cli": "^0.1.13",
-        "grunt-contrib-jshint": "^0.10.0",
-        "grunt-contrib-nodeunit": "^0.4.1",
-        "grunt-contrib-watch": "^0.6.1",
-        "load-grunt-tasks": "^1.0.0",
-        "time-grunt": "^1.0.0",
-        "grunt-mocha-cli": "^1.11.0",
-        "jshint-stylish": "^1.0.0"
-    },
-    "scripts": {
-        "test": "grunt"
-    }
+  "name": "soap-cli-simple",
+  "version": "0.2.2",
+  "description": "A simple soap client.",
+  "homepage": "https://github.com/alexsantos/soap-cli-simple",
+  "author": {
+    "name": "Alexandre Santos",
+    "email": "santosam72@gmail.com",
+    "url": "https://github.com/alexsantos"
+  },
+  "repository": "alexsantos/soap-cli-simple",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "soap-cli-simple",
+    "soap",
+    "client"
+  ],
+  "dependencies": {
+    "log4js": "^0.6.22",
+    "request": "^2.51.0",
+    "xml2js": "^0.4.4"
+  },
+  "devDependencies": {
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^1.0.0",
+    "time-grunt": "^1.0.0",
+    "grunt-mocha-cli": "^1.11.0",
+    "jshint-stylish": "^1.0.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
 }
