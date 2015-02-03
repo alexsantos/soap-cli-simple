@@ -4,6 +4,7 @@ var assert = require('assert');
 var soapCliSimple = require('../');
 
 describe('soap-cli-simple node module', function () {
+    this.timeout(0);
     it('1 + 2 must result in 3', function (done) {
         var endpoint = 'http://oracle-base.com/webservices/server.php',
             operation = 'ws_add',
