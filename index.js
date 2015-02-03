@@ -35,8 +35,8 @@ function envelope(operation, message, options) {
     }
     xml += '<env:Body>' + xml2js.buildObject(message) + '</env:Body>';
     xml += '</env:Envelope>';
-    logger.debug('Request');
-    logger.debug(xml);
+    logger.info('Request');
+    logger.info(xml);
     return xml;
 }
 
