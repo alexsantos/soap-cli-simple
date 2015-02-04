@@ -21,7 +21,8 @@ function envelope(operation, message, options) {
     '<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" ' +
     'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
     'xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" ' +
-    'xmlns="' + options.namespace + '" ' + options.namespaces.join(' ') + '>' +
+    'xmlns="' + options.namespace + '" ' +
+    (options.namespaces ? options.namespaces.join(' ') : '') + '>' +
     (options.header ? '<env:Header>' + options.header + '</env:Header>' : '') +
     '<env:Body>' + xml2js.buildObject(message) + '</env:Body></env:Envelope>';
   logger.info('Request');
