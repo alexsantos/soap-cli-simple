@@ -16,32 +16,22 @@ log4js.configure({
 
 var logger = log4js.getLogger('soap-cli-simple');
 
-function namespaces(ns) {
-  var attributes = '';
-  for (var name in ns) {
-    attributes += name + '="' + ns[name] + '" ';
-  }
-  return attributes.trim();
-}
-
 function envelope(operation, message, options) {
   var xml = '<?xml version="1.0" encoding="UTF-8"?>' +
     '<env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" ' +
     'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
     'xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" ' +
-    'xmlns="' + options.namespace + '" ' +
-    namespaces(options.namespaces) + '>' +
+    'xmlns="' + options.namespace + '" ' + options.namespaces.join(' ') + '>' +
     (options.header ? '<env:Header>' + options.header + '</env:Header>' : '') +
-    '<env:Body>' + xml2js.buildObject(message) + '</env:Body>' +
-    '</env:Envelope>';
+    '<env:Body>' + xml2js.buildObject(message) + '</env:Body></env:Envelope>';
   logger.info('Request');
   logger.info(xml);
   return xml;
 }
 
-function headers(schema, length) {
+function headers(action, length) {
   return {
-    'SOAPAction': schema,
+    'SOAPAction': action,
     'Content-Type': 'text/xml;charset=UTF-8',
     'Content-Length': length,
     'Accept-Encoding': 'gzip',

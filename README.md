@@ -32,7 +32,8 @@ soap(endpoint, operation, action, message, options).then(onsuccess).catch(onerro
 
 ### Options
 * namespace - the default namespace indicated on the WSDL
-* namespaces - a list of other namespaces indicated on the WSDL
+* namespaces - an array of other namespaces indicated on the WSDL (including the xmlns, as it will
+appear on the XML)
 * header - optional SOAP Headers
 
 ### WS-Security

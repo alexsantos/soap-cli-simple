@@ -1,6 +1,6 @@
 {
   "name": "soap-cli-simple",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A simple soap client.",
   "homepage": "https://github.com/alexsantos/soap-cli-simple",
   "author": {
