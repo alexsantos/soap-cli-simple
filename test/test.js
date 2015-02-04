@@ -73,7 +73,7 @@ describe('soap-cli-simple node module', function() {
         namespace: 'http://www.oracle-base.com/webservices/',
         namespaces: [
           'xmlns:ns1="http://www.oracle-base.com/webservices/"',
-          'xmlns:ns2="http://www.oracle-base.com/webservices/"'
+          'xmlns:ns1="http://www.oracle-base.com/webservices/"'
         ]
       };
     soapCliSimple(endpoint, operation, action, message, options).then(function(result) {
