@@ -42,7 +42,7 @@ the [ws-security](https://www.npmjs.com/package/ws-security) module:
 var soap = require('soap-cli-simple'),
     WSSecurity = require('ws-security');
     
-var security = new WSSecurity('username', 'password', 'PasswordText);
+var security = new WSSecurity('username', 'password', 'PasswordText');
 
 var options = {
         header: security.toXML()
